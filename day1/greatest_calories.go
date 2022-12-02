@@ -38,15 +38,26 @@ func main() {
 		check(err)
 		sum += int64(num)
 	}
+	// This is horrible, but I can't think
 	var greatest_calories int64 = 0
+	var second_greatest int64 = 0
+	var third_greatest int64 = 0
+
 	// Loop to compare elf totals; keep the greatest number
 	for _, total := range totals {
 		if total > greatest_calories {
 			greatest_calories = total
+		} else if total > second_greatest {
+			second_greatest = total
+		} else if total > third_greatest {
+			third_greatest = total
 		}
 	}
 	fmt.Printf("greatest_calories: %d\n", greatest_calories)
+	fmt.Printf("second_greatest: %d\n", second_greatest)
+	fmt.Printf("third_greatest: %d\n", third_greatest)
 
+	fmt.Printf("sum of top 3 elves: %d\n", greatest_calories+second_greatest+third_greatest)
 	// Return greatest number
 
 }
