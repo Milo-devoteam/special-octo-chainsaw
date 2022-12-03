@@ -13,18 +13,20 @@ type Shape struct {
 	loses  string
 }
 
-var Shapes = map[string]Shape{
+type ShapeMap map[string]Shape
+
+var Shapes = ShapeMap{
 	"ROCK":     {name: "ROCK", points: 1, beats: "SCISSORS", loses: "PAPER"},
 	"PAPER":    {name: "PAPER", points: 2, beats: "ROCK", loses: "SCISSORS"},
 	"SCISSORS": {name: "SCISSORS", points: 3, beats: "PAPER", loses: "ROCK"},
 }
 
-var opp_scoring = map[string]Shape{
+var opp_scoring = ShapeMap{
 	"A": Shapes["ROCK"],
 	"B": Shapes["PAPER"],
 	"C": Shapes["SCISSORS"],
 }
-var my_scoring = map[string]Shape{
+var my_scoring = ShapeMap{
 	"X": Shapes["ROCK"],
 	"Y": Shapes["PAPER"],
 	"Z": Shapes["SCISSORS"],

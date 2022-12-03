@@ -19,8 +19,6 @@ func main() {
 	check(err)
 
 	totals := make([]int64, 0, 10)
-
-	// print(slice)
 	scanner := bufio.NewScanner(f)
 	var sum int64 = 0
 	// sum all  elf's calories
